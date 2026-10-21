@@ -1,8 +1,8 @@
-# Proyecto DAX — Modo Oscuro (Power BI)
+# Proyecto DAX (Power BI)
 
-Reporte de ventas en Power BI construido sobre el dataset de ejemplo **Contoso**, con un tema oscuro personalizado y un set de medidas DAX que cubre agregaciones, `CALCULATE`, inteligencia de tiempo (YTD, MTD, año anterior, mes anterior), rankings con `RANKX` y títulos dinámicos.
+Reporte de ventas en Power BI construido sobre el dataset de ejemplo, con un tema oscuro personalizado y un set de medidas DAX que cubre agregaciones, `CALCULATE`, inteligencia de tiempo (YTD, MTD, año anterior, mes anterior), rankings con `RANKX` y títulos dinámicos.
 
-> Los datos de ventas corresponden a los años **2019, 2020 y 2021** (el calendario cubre 2017–2023).
+> Los datos de ventas corresponden de los años **2017 al 2023**.
 
 ## Estructura del repositorio
 
