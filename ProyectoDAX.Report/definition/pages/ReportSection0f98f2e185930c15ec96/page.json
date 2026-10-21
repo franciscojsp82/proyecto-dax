@@ -1,0 +1,35 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "ReportSection0f98f2e185930c15ec96",
+  "displayName": "Comparativa LY",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "visualInteractions": [
+    {
+      "source": "ab544476c1e28b95b844",
+      "target": "002fb1cca8fec0c75d89",
+      "type": "DataFilter"
+    },
+    {
+      "source": "6882bb81f9044ee7d381",
+      "target": "002fb1cca8fec0c75d89",
+      "type": "DataFilter"
+    },
+    {
+      "source": "6882bb81f9044ee7d381",
+      "target": "ab544476c1e28b95b844",
+      "type": "DataFilter"
+    },
+    {
+      "source": "70c445cadccf2e5a2af7",
+      "target": "002fb1cca8fec0c75d89",
+      "type": "NoFilter"
+    },
+    {
+      "source": "70c445cadccf2e5a2af7",
+      "target": "ab544476c1e28b95b844",
+      "type": "DataFilter"
+    }
+  ]
+}

@@ -1,0 +1,311 @@
+StoreKey,GeographyKey,StoreType,StoreName,EmployeeCount,SellingAreaSize,Store,ContinentName,RegionCountryName
+4,424.0,Store,Contoso Bellevue Store,19.0,455.0,Bellevue,North America,United States
+6,575.0,Store,Contoso Yakima Store,47.0,1125.0,Yakima,North America,United States
+17,551.0,Store,Contoso Spokane Store,25.0,700.0,Spokane,North America,United States
+79,579.0,Store,Contoso Baytown Store,26.0,680.0,Baytown,North America,United States
+88,453.0,Store,Contoso Cedar Park Store,19.0,455.0,Cedar Park,North America,United States
+16,627.0,Store,Contoso Everett Store,17.0,462.0,Everett,North America,United States
+5,677.0,Store,Contoso Redmond Store,33.0,560.0,Redmond,North America,United States
+15,678.0,Store,Contoso Renton Store,22.0,500.0,Renton,North America,United States
+1,693.0,Store,Contoso Seattle No.1 Store,17.0,462.0,Seattle,North America,United States
+2,693.0,Store,Contoso Seattle No.2 Store,25.0,700.0,Seattle,North America,United States
+114,782.0,Store,Contoso Albany Store,47.0,1125.0,Albany,North America,United States
+184,783.0,Store,Contoso Alexandria Store,22.0,500.0,Alexandria,North America,United States
+183,784.0,Store,Contoso Anchorage Store,47.0,1125.0,Anchorage,North America,United States
+191,785.0,Store,Contoso Annapolis Store,22.0,500.0,Annapolis,North America,United States
+43,786.0,Store,Contoso Appleton Store,33.0,560.0,Appleton,North America,United States
+93,787.0,Store,Contoso Arlington Store,25.0,700.0,Arlington,North America,United States
+141,788.0,Store,Contoso Atlantic City Store,26.0,680.0,Atlantic City,North America,United States
+150,789.0,Store,Contoso Attleboro Store,19.0,455.0,Attleboro,North America,United States
+40,790.0,Store,Contoso Aurora Store,25.0,700.0,Aurora,North America,United States
+86,791.0,Store,Contoso Austin Store,25.0,700.0,Austin,North America,United States
+197,792.0,Store,Contoso Back River Store,33.0,560.0,Back River,North America,United States
+81,793.0,Store,Contoso Bacliff Store,19.0,455.0,Bacliff,North America,United States
+192,794.0,Store,Contoso Baltimore Store,17.0,460.0,Baltimore,North America,United States
+166,795.0,Store,Contoso Bangor Store,33.0,560.0,Bangor,North America,United States
+167,796.0,Store,Contoso Bar Harbor Store,47.0,1125.0,Bar Harbor,North America,United States
+137,797.0,Store,Contoso Bayonne Store,47.0,1125.0,Bayonne,North America,United States
+76,798.0,Store,Contoso Beaumont No.1 Store,22.0,500.0,Beaumont,North America,United States
+78,798.0,Store,Contoso Beaumont No.2 Store,25.0,700.0,Beaumont,North America,United States
+33,799.0,Store,Contoso Berthoud Store,26.0,680.0,Berthoud,North America,United States
+173,801.0,Store,Contoso Bridgeport Store,19.0,455.0,Bridgeport,North America,United States
+146,802.0,Store,Contoso Boston Store,17.0,460.0,Boston,North America,United States
+37,803.0,Store,Contoso Boulder Store,47.0,1125.0,Boulder,North America,United States
+121,804.0,Store,Contoso Brooklyn Store,47.0,1125.0,Brooklyn,North America,United States
+119,805.0,Store,Contoso Buffalo Store,19.0,455.0,Buffalo,North America,United States
+52,806.0,Store,Contoso Burlington Store,47.0,1125.0,Burlington,North America,United States
+113,807.0,Store,Contoso Cape Canaveral Store,33.0,560.0,Cape Canaveral,North America,United States
+145,808.0,Store,Contoso Cape May Store,22.0,500.0,Cape May,North America,United States
+28,809.0,Store,Contoso Castle Rock Store,33.0,560.0,Castle Rock,North America,United States
+190,810.0,Store,Contoso Charleston Store,47.0,1125.0,Charleston,North America,United States
+186,811.0,Store,Contoso Charlottesville Store,25.0,700.0,Charlottesville,North America,United States
+19,812.0,Store,Contoso Cheney Store,19.0,455.0,Cheney,North America,United States
+11,813.0,Store,Contoso Cle Elum Store,26.0,680.0,Cle Elum,North America,United States
+134,814.0,Store,Contoso Clifton Store,26.0,680.0,Clifton,North America,United States
+90,815.0,Store,Contoso Dallas Store,47.0,1125.0,Dallas,North America,United States
+176,816.0,Store,Contoso Darien Store,22.0,500.0,Darien,North America,United States
+98,817.0,Store,Contoso Denton Store,47.0,1125.0,Denton,North America,United States
+34,818.0,Store,Contoso Denver No.1 Store,26.0,680.0,Denver,North America,United States
+35,818.0,Store,Contoso Denver No.2 Store,19.0,455.0,Denver,North America,United States
+36,818.0,Store,Contoso Denver No.3 Store,33.0,560.0,Denver,North America,United States
+95,819.0,Store,Contoso Desoto Store,26.0,680.0,Desoto,North America,United States
+135,820.0,Store,Contoso East Orange Store,19.0,455.0,East Orange,North America,United States
+53,821.0,Store,Contoso East Troy Store,22.0,500.0,East Troy,North America,United States
+63,822.0,Store,Contoso Edgerton Store,25.0,700.0,Edgerton,North America,United States
+126,823.0,Store,Contoso Elmira Store,26.0,680.0,Elmira,North America,United States
+20,824.0,Store,Contoso Englewood Store,33.0,560.0,Englewood,North America,United States
+14,825.0,Store,Contoso Fall City Store,47.0,1125.0,Fall City,North America,United States
+163,826.0,Store,Contoso Falmouth Store,25.0,700.0,Falmouth,North America,United States
+46,827.0,Store,Contoso Fond du Lac Store,17.0,460.0,Fond du Lac,North America,United States
+64,828.0,Store,Contoso Fort Atkinson Store,26.0,680.0,Fort Atkinson,North America,United States
+30,829.0,Store,Contoso Fort Collins Store,22.0,500.0,Fort Collins,North America,United States
+109,830.0,Store,Contoso Fort Lauderdale Store,25.0,700.0,Fort Lauderdale,North America,United States
+99,831.0,Store,Contoso Fort Worth Store,22.0,500.0,Fort Worth,North America,United States
+155,832.0,Store,Contoso Framingham Store,25.0,700.0,Framingham,North America,United States
+187,833.0,Store,Contoso Fredericksburg Store,26.0,680.0,Fredericksburg,North America,United States
+91,834.0,Store,Contoso Georgetown Store,22.0,500.0,Georgetown,North America,United States
+55,835.0,Store,Contoso Germantown Store,25.0,700.0,Germantown,North America,United States
+56,835.0,Store,Contoso Germantown Store,25.0,700.0,Germantown,North America,United States
+198,835.0,Store,Contoso North Harford Store,47.0,1125.0,North Harford,North America,United States
+23,836.0,Store,Contoso Grand Junction Store,17.0,460.0,Grand Junction,North America,United States
+94,837.0,Store,Contoso Grand Prairie Store,25.0,700.0,Grand Prairie,North America,United States
+7,838.0,Store,Contoso Granger Store,22.0,500.0,Granger,North America,United States
+25,839.0,Store,Contoso Greeley  No.1 Store,25.0,700.0,Greeley,North America,United States
+31,839.0,Store,Contoso Greeley No.2 Store,17.0,462.0,Greeley,North America,United States
+42,840.0,Store,Contoso Green Bay Store,19.0,455.0,Green Bay,North America,United States
+189,841.0,Store,Contoso Greenville Store,33.0,560.0,Greenville,North America,United States
+140,842.0,Store,Contoso Hackensack Store,25.0,700.0,Hackensack,North America,United States
+172,843.0,Store,Contoso Hartford Store,26.0,680.0,Hartford,North America,United States
+158,844.0,Store,Contoso Haverhill Store,19.0,455.0,Haverhill,North America,United States
+92,845.0,Store,Contoso Hillsboro Store,17.0,460.0,Hillsboro,North America,United States
+153,846.0,Store,Contoso Hingham Store,22.0,500.0,Hingham,North America,United States
+143,847.0,Store,Contoso Hoboken Store,33.0,560.0,Hoboken,North America,United States
+161,848.0,Store,Contoso Holyoke Store,22.0,500.0,Holyoke,North America,United States
+66,849.0,Store,Contoso Houston No.1 Store,33.0,560.0,Houston,North America,United States
+67,849.0,Store,Contoso Houston No.2 Store,47.0,1125.0,Houston,North America,United States
+68,849.0,Store,Contoso Houston No.3 Store,22.0,500.0,Houston,North America,United States
+69,849.0,Store,Contoso Houston No.4 Store,17.0,460.0,Houston,North America,United States
+193,850.0,Store,Contoso Howard Store,25.0,700.0,Howard,North America,United States
+84,851.0,Store,Contoso Humble Store,22.0,500.0,Humble,North America,United States
+123,852.0,Store,Contoso Ithaca Store,17.0,460.0,Ithaca,North America,United States
+103,853.0,Store,Contoso Jacksonville Store,26.0,680.0,Jacksonville,North America,United States
+132,854.0,Store,Contoso Jersey City Store,25.0,700.0,Jersey City,North America,United States
+168,855.0,Store,Contoso Kennebunkport Store,22.0,500.0,Kennebunkport,North America,United States
+3,856.0,Store,Contoso Kennewick Store,26.0,680.0,Kennewick,North America,United States
+112,857.0,Store,Contoso Key West Store,19.0,455.0,Key West,North America,United States
+80,858.0,Store,Contoso La Porte Store,26.0,680.0,La Porte,North America,United States
+27,859.0,Store,Contoso Lafayette Store,19.0,455.0,Lafayette,North America,United States
+108,860.0,Store,Contoso Lakeland Store,17.0,460.0,Lakeland,North America,United States
+152,861.0,Store,Contoso Leominster Store,47.0,1125.0,Leominster,North America,United States
+169,862.0,Store,Contoso Lewiston Store,17.0,460.0,Lewiston,North America,United States
+97,863.0,Store,Contoso Lewisville Store,33.0,560.0,Lewisville,North America,United States
+178,864.0,Store,Contoso Litchfield County Store,25.0,700.0,Litchfield County,North America,United States
+39,865.0,Store,Contoso Littleton Store,17.0,462.0,Littleton,North America,United States
+75,866.0,Store,Contoso Longview Store,47.0,1125.0,Longview,North America,United States
+26,867.0,Store,Contoso Loveland Store,26.0,680.0,Loveland,North America,United States
+151,868.0,Store,Contoso Lowell Store,33.0,560.0,Lowell,North America,United States
+159,869.0,Store,Contoso Lynn Store,33.0,560.0,Lynn,North America,United States
+60,870.0,Store,Contoso Madison Store,47.0,1125.0,Madison,North America,United States
+59,871.0,Store,Contoso Manitowoc Store,33.0,560.0,Manitowoc,North America,United States
+74,872.0,Store,Contoso Marshall Store,33.0,560.0,Marshall,North America,United States
+188,873.0,Store,Contoso Martinsville Store,19.0,455.0,Martinsville,North America,United States
+44,874.0,Store,Contoso Menasha Store,47.0,1125.0,Menasha,North America,United States
+101,875.0,Store,Contoso Miami No.1 Store,17.0,462.0,Miami,North America,United States
+102,875.0,Store,Contoso Miami No.2 Store,25.0,700.0,Miami,North America,United States
+70,876.0,Store,Contoso Midland Store,25.0,700.0,Midland,North America,United States
+32,877.0,Store,Contoso Milliken Store,25.0,700.0,Milliken,North America,United States
+47,878.0,Store,Contoso Milwaukee No.1 Store,25.0,700.0,Milwaukee,North America,United States
+48,878.0,Store,Contoso Milwaukee No.2 Store,25.0,700.0,Milwaukee,North America,United States
+49,878.0,Store,Contoso Milwaukee No.3 Store,26.0,680.0,Milwaukee,North America,United States
+72,879.0,Store,Contoso Minden Store,26.0,680.0,Minden,North America,United States
+142,880.0,Store,Contoso Montclair Store,19.0,455.0,Montclair,North America,United States
+144,882.0,Store,Contoso Morristown Store,47.0,1125.0,Morristown,North America,United States
+165,883.0,Store,Contoso Nantucket Store,19.0,455.0,Nantucket,North America,United States
+227,884.0,Store,Contoso Naples Store,13.0,500.0,Naples,North America,United States
+149,885.0,Store,Contoso New Bedford Store,26.0,680.0,New Bedford,North America,United States
+139,886.0,Store,Contoso New Brunswick Store,17.0,462.0,New Brunswick,North America,United States
+24,887.0,Store,Contoso New Castle Store,25.0,700.0,New Castle,North America,United States
+177,888.0,Store,Contoso New Haven Store,17.0,462.0,New Haven,North America,United States
+179,889.0,Store,Contoso New London Store,26.0,680.0,New London,North America,United States
+115,890.0,Store,Contoso New York No.1 Store,22.0,500.0,New York,North America,United States
+117,890.0,Store,Contoso New York No.2 Store,25.0,700.0,New York,North America,United States
+130,891.0,Store,Contoso Newark No.1 Store,22.0,500.0,Newark,North America,United States
+131,891.0,Store,Contoso Newark No.2 Store,17.0,462.0,Newark,North America,United States
+180,892.0,Store,Contoso Norfolk Store,26.0,680.0,Norfolk,North America,United States
+12,893.0,Store,Contoso North Bend Store,19.0,455.0,North Bend,North America,United States
+160,895.0,Store,Contoso Northampton Store,47.0,1125.0,Northampton,North America,United States
+175,896.0,Store,Contoso Old Saybrook Store,47.0,1125.0,Old Saybrook,North America,United States
+77,897.0,Store,Contoso Orange Store,17.0,462.0,Orange,North America,United States
+61,898.0,Store,Contoso Oregon Store,22.0,500.0,Oregon,North America,United States
+110,899.0,Store,Contoso Orlando Store,25.0,700.0,Orlando,North America,United States
+170,900.0,Store,Contoso Orono Store,25.0,700.0,Orono,North America,United States
+45,901.0,Store,Contoso Oshkosh Store,22.0,500.0,Oshkosh,North America,United States
+122,902.0,Store,Contoso Oswego Store,22.0,500.0,Oswego,North America,United States
+41,904.0,Store,Contoso Parker Store,26.0,680.0,Parker,North America,United States
+196,905.0,Store,Contoso Parkville Store,19.0,455.0,Parkville,North America,United States
+83,906.0,Store,Contoso Pasadena Store,47.0,1125.0,Pasadena,North America,United States
+136,907.0,Store,Contoso Passaic Store,33.0,560.0,Passaic,North America,United States
+133,908.0,Store,Contoso Paterson Store,26.0,680.0,Paterson,North America,United States
+162,909.0,Store,Contoso Pittsfield Store,17.0,462.0,Pittsfield,North America,United States
+100,910.0,Store,Contoso Plano Store,17.0,462.0,Plano,North America,United States
+120,911.0,Store,Contoso Plattsburgh Store,33.0,560.0,Plattsburgh,North America,United States
+127,912.0,Store,Contoso Poestenkill Store,19.0,455.0,Poestenkill,North America,United States
+57,913.0,Store,Contoso Port Washington Store,26.0,680.0,Port Washington,North America,United States
+164,914.0,Store,Contoso Provincetown Store,26.0,680.0,Provincetown,North America,United States
+195,915.0,Store,Contoso Queen Anne's County Store,26.0,680.0,Queen Anne's County,North America,United States
+125,916.0,Store,Contoso Queens Store,25.0,700.0,Queens,North America,United States
+154,917.0,Store,Contoso Quincy Store,17.0,462.0,Quincy,North America,United States
+51,918.0,Store,Contoso Racine No.1 Store,33.0,560.0,Racine,North America,United States
+65,918.0,Store,Contoso Racine No.2 Store,19.0,455.0,Racine,North America,United States
+96,919.0,Store,Contoso Richardson Store,19.0,455.0,Richardson,North America,United States
+194,920.0,Store,Contoso Ridgely Store,25.0,700.0,Ridgely,North America,United States
+185,921.0,Store,Contoso Roanoke Store,17.0,462.0,Roanoke,North America,United States
+116,922.0,Store,Contoso Rochester No.1 Store,17.0,462.0,Rochester,North America,United States
+124,922.0,Store,Contoso Rochester No.2 Store,25.0,700.0,Rochester,North America,United States
+89,923.0,Store,Contoso Round Rock Store,33.0,560.0,Round Rock,North America,United States
+71,924.0,Store,Contoso Russellville Store,25.0,700.0,Russellville,North America,United States
+87,925.0,Store,Contoso San Antonio Store,26.0,680.0,San Antonio,North America,United States
+107,926.0,Store,Contoso Sebring Store,22.0,500.0,Sebring,North America,United States
+29,927.0,Store,Contoso Sedalia Store,47.0,1125.0,Sedalia,North America,United States
+58,928.0,Store,Contoso Sheboygan Store,19.0,455.0,Sheboygan,North America,United States
+73,929.0,Store,Contoso Shreveport Store,19.0,455.0,Shreveport,North America,United States
+13,930.0,Store,Contoso Snoqualmie Store,33.0,560.0,Snoqualmie,North America,United States
+157,931.0,Store,Contoso Somerville Store,26.0,680.0,Somerville,North America,United States
+171,932.0,Store,Contoso South Portland Store,25.0,700.0,South Portland,North America,United States
+85,933.0,Store,Contoso Spring Store,17.0,462.0,Spring,North America,United States
+62,934.0,Store,Contoso Stoughton Store,17.0,462.0,Stoughton,North America,United States
+8,935.0,Store,Contoso Sunnyside Store,17.0,460.0,Sunnyside,North America,United States
+118,936.0,Store,Contoso Syracuse Store,26.0,680.0,Syracuse,North America,United States
+104,937.0,Store,Contoso Tallahassee No.1 Store,19.0,455.0,Tallahassee,North America,United States
+105,937.0,Store,Contoso Tallahassee No.2 Store,33.0,560.0,Tallahassee,North America,United States
+106,937.0,Store,Contoso Tallahassee No.2 Store,33.0,560.0,Tallahassee,North America,United States
+111,938.0,Store,Contoso Tampa Store,26.0,680.0,Tampa,North America,United States
+82,939.0,Store,Contoso Texas City Store,33.0,560.0,Texas City,North America,United States
+38,940.0,Store,Contoso Thornton Store,22.0,500.0,Thornton,North America,United States
+9,941.0,Store,Contoso Toppenish Store,25.0,700.0,Toppenish,North America,United States
+128,943.0,Store,Contoso Trenton No.1 Store,33.0,560.0,Trenton,North America,United States
+129,943.0,Store,Contoso Trenton No.2 Store,47.0,1125.0,Trenton,North America,United States
+18,944.0,Store,Contoso Veradale Store,26.0,680.0,Veradale,North America,United States
+138,945.0,Store,Contoso Vineland Store,22.0,500.0,Vineland,North America,United States
+181,946.0,Store,Contoso Virginia Beach Store,19.0,455.0,Virginia Beach,North America,United States
+10,947.0,Store,Contoso Wapato Store,25.0,700.0,Wapato,North America,United States
+174,948.0,Store,Contoso Waterbury Store,33.0,560.0,Waterbury,North America,United States
+50,949.0,Store,Contoso Waukesha No.1 Store,19.0,455.0,Waukesha,North America,United States
+54,949.0,Store,Contoso Waukesha No.2 Store,17.0,462.0,Waukesha,North America,United States
+21,950.0,Store,Contoso Wheat Ridge Store,47.0,1125.0,Wheat Ridge,North America,United States
+182,951.0,Store,Contoso Winchester Store,33.0,560.0,Winchester,North America,United States
+147,952.0,Store,Contoso Worcester No.1 Store,25.0,700.0,Worcester,North America,United States
+148,952.0,Store,Contoso Worcester No.2 Store,25.0,700.0,Worcester,North America,United States
+308,693.0,Reseller,Contoso North America Reseller,15.0,450.0,North America Reseller,North America,United States
+199,800.0,Online,Contoso North America Online Store,325.0,500.0,North America Online,North America,United States
+200,894.0,Catalog,Contoso Catalog Store,120.0,462.0,Catalog,North America,United States
+22,571.0,Store,Contoso Westminster Store,22.0,500.0,Westminster,North America,Canada
+156,449.0,Store,Contoso Cambridge Store,26.0,680.0,Cambridge,Europe,United Kingdom
+201,506.0,Store,Contoso London Store,17.0,462.0,London,Europe,United Kingdom
+204,576.0,Store,Contoso York Store,78.0,680.0,York,Europe,United Kingdom
+214,501.0,Store,Contoso Leeds Store,25.0,680.0,Leeds,Europe,United Kingdom
+215,529.0,Store,Contoso Paris Store,12.0,680.0,Paris,Europe,France
+309,529.0,Reseller,Contoso Europe Reseller,12.0,551.0,Europe Reseller,Europe,France
+253,558.0,Store,Contoso Sydney No.1 Store,20.0,480.0,Sydney,Oceania,Australia
+300,558.0,Store,Contoso Sydney  No.2 Store,95.0,480.0,Sydney,Oceania,Australia
+289,562.0,Store,Contoso Vancouver  No.1 Store,95.0,480.0,Vancouver,North America,Canada
+290,562.0,Store,Contoso Vancouver  No.2 Store,95.0,480.0,Vancouver,North America,Canada
+228,586.0,Store,Contoso Berlin Store,13.0,500.0,Berlin,Europe,Germany
+229,586.0,Store,Contoso Berlin Store,13.0,500.0,Berlin,Europe,Germany
+306,586.0,Online,Contoso Europe Online Store,7.0,1000.0,Europe Online,Europe,Germany
+291,598.0,Store,Contoso Calgary  Store,95.0,480.0,Calgary,North America,Canada
+212,651.0,Store,Contoso Liverpool Store,64.0,680.0,Liverpool,Europe,United Kingdom
+264,708.0,Store,Contoso Ashgabat No.1 Store,68.0,480.0,Ashgabat,Asia,Turkmenistan
+298,708.0,Store,Contoso Ashgabat  No.2 Store,95.0,480.0,Ashgabat,Asia,Turkmenistan
+262,709.0,Store,Contoso Bangkok No.1 Store,62.0,480.0,Bangkok,Asia,Thailand
+296,709.0,Store,Contoso Bangkok No.2 Store,95.0,480.0,Bangkok,Asia,Thailand
+279,710.0,Store,Contoso Beijing Store,86.0,480.0,Beijing,Asia,China
+307,710.0,Online,Contoso Asia Online Store,8.0,93800.0,Asia Online,Asia,China
+310,710.0,Reseller,Contoso Asia Reseller,17.0,93800.0,Asia Reseller,Asia,China
+276,711.0,Store,Contoso Bishkek Store,50.0,480.0,Bishkek,Asia,Kyrgyzstan
+275,712.0,Store,Contoso Busan Store,50.0,480.0,Busan,Asia,South Korea
+252,713.0,Store,Contoso Canberra Store,28.0,480.0,Canberra,Oceania,Australia
+261,714.0,Store,Contoso Damascus No.1 Store,35.0,480.0,Damascus,Asia,Syria
+295,714.0,Store,Contoso Damascus No.2 Store,95.0,480.0,Damascus,Asia,Syria
+280,715.0,Store,Contoso Guangzhou Store,131.0,480.0,Guangzhou,Asia,China
+259,716.0,Store,Contoso Hong Kong No.1 Store,35.0,480.0,Hong Kong,Asia,China
+293,716.0,Store,Contoso Hong Kong No.2 Store,95.0,480.0,Hong Kong,Asia,China
+265,717.0,Store,Contoso Islamabad No.1 Store,71.0,480.0,Islamabad,Asia,Pakistan
+266,717.0,Store,Contoso Islamabad No.1 Store,71.0,480.0,Islamabad,Asia,Pakistan
+299,717.0,Store,Contoso Islamabad  No.2 Store,95.0,480.0,Islamabad,Asia,Pakistan
+257,718.0,Store,Contoso Kolkata Store,35.0,480.0,Kolkata,Asia,India
+273,719.0,Store,Contoso Kyoto Store,50.0,480.0,Kyoto,Asia,Japan
+256,721.0,Store,Contoso Mumbai Store,35.0,480.0,Mumbai,Asia,India
+271,722.0,Store,Contoso Nagoya Store,50.0,480.0,Nagoya,Asia,Japan
+255,723.0,Store,Contoso New Delhi Store,29.0,480.0,New Delhi,Asia,India
+270,724.0,Store,Contoso Osaka No.1 Store,80.0,480.0,Osaka,Asia,Japan
+301,724.0,Store,Contoso Osaka No.2 Store,95.0,480.0,Osaka,Asia,Japan
+272,725.0,Store,Contoso Sapporo Store,50.0,480.0,Sapporo,Asia,Japan
+274,726.0,Store,Contoso Seoul Store,50.0,480.0,Seoul,Asia,South Korea
+277,727.0,Store,Contoso Shanghai No.1 Store,95.0,480.0,Shanghai,Asia,China
+281,727.0,Store,Contoso Shanghai No.2 Store,95.0,480.0,Shanghai,Asia,China
+251,728.0,Store,Contoso Singapore Store,27.0,480.0,Singapore,Asia,Singapore
+302,729.0,Store,Contoso Taipei  Store,95.0,480.0,Taipei,Asia,Taiwan
+260,730.0,Store,Contoso Tehran No.1 Store,35.0,480.0,Tehran,Asia,Iran
+294,730.0,Store,Contoso Tehran No.2 Store,95.0,480.0,Tehran,Asia,Iran
+258,731.0,Store,Contoso Thimphu No.1 Store,35.0,480.0,Thimphu,Asia,Bhutan
+292,731.0,Store,Contoso Thimphu No.2 Store,95.0,480.0,Thimphu,Asia,Bhutan
+267,732.0,Store,Contoso Tokyo No.1 Store,68.0,480.0,Tokyo,Asia,Japan
+268,732.0,Store,Contoso Tokyo No.2 Store,68.0,480.0,Tokyo,Asia,Japan
+278,733.0,Store,Contoso Urumqi Store,50.0,480.0,Urumqi,Asia,China
+254,734.0,Store,Contoso Yerevan Store,15.0,480.0,Yerevan,Asia,Armenia
+269,735.0,Store,Contoso Yokohama Store,77.0,480.0,Yokohama,Asia,Japan
+240,736.0,Store,Contoso Amsterdam Store,26.0,680.0,Amsterdam,Europe,the Netherlands
+250,737.0,Store,Contoso Athens Store,15.0,680.0,Athens,Europe,Greece
+209,738.0,Store,Contoso Baildon Store,32.0,680.0,Baildon,Europe,United Kingdom
+236,739.0,Store,Contoso Baumholder Store,28.0,500.0,Baumholder,Europe,Germany
+246,740.0,Store,Contoso Berne Store,53.0,680.0,Berne,Europe,Switzerland
+245,741.0,Store,Contoso Bucharest Store,25.0,680.0,Bucharest,Europe,Romania
+205,742.0,Store,Contoso Carlisle Store,23.0,680.0,Carlisle,Europe,United Kingdom
+210,743.0,Store,Contoso Cheshire Store,,680.0,Cheshire,Europe,United Kingdom
+241,745.0,Store,Contoso Copenhagen Store,25.0,680.0,Copenhagen,Europe,Denmark
+249,746.0,Store,Contoso Dublin Store,55.0,680.0,Dublin,Europe,Ireland
+234,747.0,Store,Contoso Dusseldorf Store,24.0,500.0,Dusseldorf,Europe,Germany
+202,748.0,Store,Contoso Edinburgh Store,25.0,700.0,Edinburgh,Europe,United Kingdom
+224,749.0,Store,Contoso Firenze Store,45.0,500.0,Firenze,Europe,Italy
+237,750.0,Store,Contoso Giebelstadt Store,15.0,500.0,Giebelstadt,Europe,Germany
+203,751.0,Store,Contoso Glasgow Store,26.0,680.0,Glasgow,Europe,United Kingdom
+231,752.0,Store,Contoso Hofheim Store,25.0,500.0,Hofheim,Europe,Germany
+213,753.0,Store,Contoso Knotty Ash Store,24.0,680.0,Knotty Ash,Europe,United Kingdom
+230,754.0,Store,Contoso koln No.2 Store,25.0,500.0,koln,Europe,Germany
+232,754.0,Store,Contoso koln No.1 Store,35.0,500.0,koln,Europe,Germany
+207,755.0,Store,Contoso Lancashire Store,36.0,680.0,Lancashire,Europe,United Kingdom
+233,756.0,Store,Contoso Landstuhl Store,21.0,500.0,Landstuhl,Europe,Germany
+303,757.0,Store,Contoso Lisbon Store,95.0,480.0,Lisbon,Europe,Portugal
+244,758.0,Store,Contoso Ljubljana Store,36.0,680.0,Ljubljana,Europe,Slovenia
+217,759.0,Store,Contoso Lyon Store,15.0,680.0,Lyon,Europe,France
+243,760.0,Store,Contoso Madrid Store,35.0,680.0,Madrid,Europe,Spain
+206,761.0,Store,Contoso Manchester Store,11.0,680.0,Manchester,Europe,United Kingdom
+216,762.0,Store,Contoso Marseille Store,13.0,680.0,Marseille,Europe,France
+226,763.0,Store,Contoso Milan Store,23.0,500.0,Milan,Europe,Italy
+263,764.0,Store,Contoso Moscow  No.1 Store,65.0,480.0,Moscow,Europe,Russia
+297,764.0,Store,Contoso Moscow  No.2 Store,95.0,480.0,Moscow,Europe,Russia
+239,765.0,Store,Contoso Munich Store,18.0,500.0,Munich,Europe,Germany
+220,766.0,Store,Contoso Nantes Store,11.0,680.0,Nantes,Europe,France
+219,767.0,Store,Contoso Nice Store,32.0,680.0,Nice,Europe,France
+305,768.0,Store,Contoso Nizhny Novgorod Store,95.0,480.0,Nizhny Novgorod,Europe,Russia
+238,769.0,Store,Contoso obamberg Store,29.0,500.0,obamberg,Europe,Germany
+235,770.0,Store,Contoso Ramstein Store,15.0,500.0,Ramstein,Europe,Germany
+222,771.0,Store,Contoso Roma Store,43.0,490.0,Roma,Europe,Italy
+304,772.0,Store,Contoso Saint Petersburg Store,95.0,480.0,Saint Petersburg,Europe,Russia
+242,773.0,Store,Contoso Stockholm Store,33.0,680.0,Stockholm,Europe,Sweden
+211,774.0,Store,Contoso Stockport Store,34.0,680.0,Stockport,Europe,United Kingdom
+221,775.0,Store,Contoso Strasbourg Store,10.0,630.0,Strasbourg,Europe,France
+225,776.0,Store,Contoso Torino Store,24.0,500.0,Torino,Europe,Italy
+218,777.0,Store,Contoso Toulouse Store,23.0,680.0,Toulouse,Europe,France
+248,778.0,Store,Contoso Valletta Store,42.0,680.0,Valletta,Europe,Malta
+223,779.0,Store,Contoso Venezia Store,11.0,500.0,Venezia,Europe,Italy
+247,780.0,Store,Contoso Warsaw Store,15.0,680.0,Warsaw,Europe,Poland
+208,781.0,Store,Contoso West Yorkshire Store,90.0,680.0,West Yorkshire,Europe,United Kingdom
+287,881.0,Store,Contoso Montreal No.1 Store,95.0,480.0,Montreal,North America,Canada
+288,881.0,Store,Contoso Montreal No.2 Store,95.0,480.0,Montreal,North America,Canada
+282,903.0,Store,Contoso Ottawa No.1 Store,95.0,480.0,Ottawa,North America,Canada
+283,903.0,Store,Contoso Ottawa No.2 Store,95.0,480.0,Ottawa,North America,Canada
+284,942.0,Store,Contoso Toronto No.1 Store,95.0,480.0,Toronto,North America,Canada
+285,942.0,Store,Contoso Toronto No.2 Store,95.0,480.0,Toronto,North America,Canada
+286,942.0,Store,Contoso Toronto No.3 Store,95.0,480.0,Toronto,North America,Canada

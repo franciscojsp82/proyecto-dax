@@ -1,0 +1,20 @@
+relationship 6dc5fdbc-3762-4515-9850-34a9f6f60b42
+	fromColumn: FactSales.DateKey
+	toColumn: DimCalendar.DateKey
+
+relationship 8c08a3e3-5dfa-4f45-bd01-26c088c7ec4d
+	fromColumn: FactSales.channelKey
+	toColumn: DimChannel.ChannelKey
+
+relationship 7dff853e-da47-41db-98d1-96d77c327a7e
+	fromColumn: FactSales.StoreKey
+	toColumn: DimStores.StoreKey
+
+relationship 8cdbebb0-c81c-477c-b087-6da9cba98873
+	fromColumn: FactSales.PromotionKey
+	toColumn: DimPromotion.PromotionKey
+
+relationship 72a8ad7e-a84c-450f-aa1b-4e8e5695be7b
+	fromColumn: FactSales.ProductKey
+	toColumn: DimProduct.ProductKey
+

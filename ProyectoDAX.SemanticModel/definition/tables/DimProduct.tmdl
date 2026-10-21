@@ -1,0 +1,164 @@
+table DimProduct
+	lineageTag: 489deabe-0b44-4a53-88a8-121c7504a6ec
+
+	column ProductKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 756c97f0-6bd2-45a6-9bfa-a9cf908b9ee4
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductName
+		dataType: string
+		lineageTag: 4c005951-3944-4dcc-ade2-26accc787cc4
+		summarizeBy: none
+		sourceColumn: ProductName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductDescription
+		dataType: string
+		lineageTag: ce3933e7-836c-486e-b743-4830037e2716
+		summarizeBy: none
+		sourceColumn: ProductDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductSubcategoryKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 7e9d1dbe-3dc7-4e93-bdd0-b0c3bf0bbab0
+		summarizeBy: none
+		sourceColumn: ProductSubcategoryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Manufacturer
+		dataType: string
+		lineageTag: 46c478a8-9080-4494-a067-cb011735d9d6
+		summarizeBy: none
+		sourceColumn: Manufacturer
+
+		annotation SummarizationSetBy = Automatic
+
+	column BrandName
+		dataType: string
+		lineageTag: 0a1f9b4a-c0d8-4051-81b0-abe5cc945e2e
+		summarizeBy: none
+		sourceColumn: BrandName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClassID
+		dataType: string
+		lineageTag: 310758a3-2893-4727-87f2-6306c88715ca
+		summarizeBy: none
+		sourceColumn: ClassID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClassName
+		dataType: string
+		lineageTag: 53b7d72a-1235-459d-b6d7-8c18f03be888
+		summarizeBy: none
+		sourceColumn: ClassName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ColorID
+		dataType: string
+		lineageTag: 532ae64a-9038-4192-9cf0-f7a6d5167523
+		summarizeBy: none
+		sourceColumn: ColorID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ColorName
+		dataType: string
+		lineageTag: ceb1ebe5-99ba-4b73-82f6-e9d514bf6e57
+		summarizeBy: none
+		sourceColumn: ColorName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Size
+		dataType: string
+		lineageTag: 97b6fc7e-69f1-4a94-82b9-bb7381b846f3
+		summarizeBy: none
+		sourceColumn: Size
+
+		annotation SummarizationSetBy = Automatic
+
+	column Weight
+		dataType: double
+		lineageTag: 9602b6a4-1c23-48c8-be2a-9195995343e0
+		summarizeBy: none
+		sourceColumn: Weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UnitCost
+		dataType: decimal
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: d5e8f34f-f0e1-4b6b-997d-4de37c8e878f
+		summarizeBy: none
+		sourceColumn: UnitCost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	column UnitPrice
+		dataType: decimal
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: 3056472a-5d9a-4373-a8c8-36e27fb3a34b
+		summarizeBy: none
+		sourceColumn: UnitPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	column ProductSubcategoryName
+		dataType: string
+		lineageTag: 703ee1a7-3bdc-4dad-88bd-8020a7373f44
+		summarizeBy: none
+		sourceColumn: ProductSubcategoryName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductCategoryKey
+		dataType: int64
+		formatString: 0
+		lineageTag: d0dd8177-980b-4b63-b589-26ae841ec726
+		summarizeBy: none
+		sourceColumn: ProductCategoryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductCategory
+		dataType: string
+		lineageTag: 7c5c21fd-f7e4-43f1-9ee7-44681b127932
+		summarizeBy: none
+		sourceColumn: ProductCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimProduct = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents(Text.TrimEnd(RutaDatos, "\") & "\DimProduct.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),
+				    #"Vacíos a null" = Table.ReplaceValue(#"Encabezados promovidos", "", null, Replacer.ReplaceValue, Table.ColumnNames(#"Encabezados promovidos")),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Vacíos a null", {{"ProductKey", Int64.Type}, {"ProductName", type text}, {"ProductDescription", type text}, {"ProductSubcategoryKey", Int64.Type}, {"Manufacturer", type text}, {"BrandName", type text}, {"ClassID", type text}, {"ClassName", type text}, {"ColorID", type text}, {"ColorName", type text}, {"Size", type text}, {"Weight", type number}, {"UnitCost", Currency.Type}, {"UnitPrice", Currency.Type}, {"ProductSubcategoryName", type text}, {"ProductCategoryKey", Int64.Type}, {"ProductCategory", type text}}, "en-US")
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+

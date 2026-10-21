@@ -1,0 +1,9 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "ReportSection98f0623300b17bcd6490",
+  "displayName": "TT2",
+  "displayOption": "ActualSize",
+  "height": 440,
+  "width": 420,
+  "type": "Tooltip"
+}

@@ -1,0 +1,125 @@
+table DimStores
+	lineageTag: 98a362a4-64b2-4023-8750-e76872e03ab2
+
+	column StoreKey
+		dataType: int64
+		formatString: 0
+		lineageTag: d94c2615-9f83-462c-a976-26f5c3348918
+		summarizeBy: none
+		sourceColumn: StoreKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column GeographyKey
+		dataType: double
+		isHidden
+		lineageTag: b3b9fa46-7581-4328-a032-bf493a30a47a
+		summarizeBy: none
+		sourceColumn: GeographyKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column StoreType
+		dataType: string
+		lineageTag: 9b26664d-6f16-499f-aa3f-e8ee977c9e43
+		summarizeBy: none
+		sourceColumn: StoreType
+
+		annotation SummarizationSetBy = Automatic
+
+	column StoreName
+		dataType: string
+		lineageTag: 4e22a817-50ee-4c54-a674-033d259a5ef2
+		summarizeBy: none
+		sourceColumn: StoreName
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmployeeCount
+		dataType: double
+		lineageTag: 51c79f03-685e-4455-b3bb-4ac454499165
+		summarizeBy: none
+		sourceColumn: EmployeeCount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SellingAreaSize
+		dataType: double
+		lineageTag: c99a2cd5-5072-479a-ab57-8aabf5c56eda
+		summarizeBy: none
+		sourceColumn: SellingAreaSize
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Tienda = SUBSTITUTE(DimStores[StoreName], "Store", BLANK())
+		dataType: string
+		lineageTag: 2ecc7bc8-7f63-4693-8ded-5d86cbc834f0
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Store
+		dataType: string
+		lineageTag: 31b25915-3248-4c0b-bf2b-2100471bd262
+		summarizeBy: none
+		sourceColumn: Store
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ubicación Física' = DimStores[Store] & ", " & DimStores[RegionCountryName] & ", " & DimStores[ContinentName]
+		dataType: string
+		lineageTag: 5e8bc3a7-21b3-4aca-995b-299836a4f468
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column ContinentName
+		dataType: string
+		lineageTag: 47b5d7f5-91ff-4d2e-9e4d-c343edf18e9a
+		dataCategory: Continent
+		summarizeBy: none
+		sourceColumn: ContinentName
+
+		annotation SummarizationSetBy = Automatic
+
+	column RegionCountryName
+		dataType: string
+		lineageTag: 581f2ba7-1432-43e6-b69b-67d0845766a4
+		dataCategory: Country
+		summarizeBy: none
+		sourceColumn: RegionCountryName
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tamaño Tienda' =
+			SWITCH(
+			    TRUE(),
+			    DimStores[SellingAreaSize] <= 500 , "Pequeña" ,
+			    DimStores[SellingAreaSize] <= 800 , "Mediana" ,
+			    DimStores[SellingAreaSize] > 800 , "Grande"
+			)
+		dataType: string
+		lineageTag: 8e598e41-0c17-4288-b10a-e3f9ebc0ba94
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimStores = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents(Text.TrimEnd(RutaDatos, "\") & "\DimStores.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),
+				    #"Vacíos a null" = Table.ReplaceValue(#"Encabezados promovidos", "", null, Replacer.ReplaceValue, Table.ColumnNames(#"Encabezados promovidos")),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Vacíos a null", {{"StoreKey", Int64.Type}, {"GeographyKey", type number}, {"StoreType", type text}, {"StoreName", type text}, {"EmployeeCount", type number}, {"SellingAreaSize", type number}, {"Store", type text}, {"ContinentName", type text}, {"RegionCountryName", type text}}, "en-US")
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+

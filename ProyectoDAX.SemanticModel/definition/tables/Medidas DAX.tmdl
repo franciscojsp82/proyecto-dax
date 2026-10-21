@@ -1,0 +1,199 @@
+table 'Medidas DAX'
+	lineageTag: 69c930f3-6053-45ec-95ca-4d3eafb5865d
+
+	measure 'Cantidad Devoluciones' = SUM(FactSales[ReturnQuantity])
+		formatString: #,0
+		lineageTag: 4eda2473-2c80-42e7-8309-145069ca565b
+
+	measure 'Cantidad Total' = [Cantidad Ventas] - [Cantidad Devoluciones]
+		formatString: #,0
+		lineageTag: ecd68439-52ab-4ae0-a4e1-3a31c3a3c4b9
+
+	measure 'Cantidad Ventas' = SUM(FactSales[SalesQuantity])
+		formatString: #,0
+		lineageTag: 638ff8c0-cae9-4f71-8131-83807ece5185
+
+	measure 'Ratio Devoluciones' = DIVIDE ( [Cantidad Devoluciones], [Cantidad Ventas], 0 )
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 326bdb82-f7ce-486c-b365-34d3b6f4161e
+
+	measure 'PU Promedio' = AVERAGE ( DimProduct[UnitPrice] )
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: b7ed3c9a-1316-4f47-9538-57e4c009d3db
+
+	measure 'Cantidad Tiendas' = COUNTROWS(DimStores)
+		formatString: 0
+		lineageTag: 371eab05-a6dc-4f08-843a-18932d7bcad5
+
+	measure 'Cantidad Tiendas con Ventas' = DISTINCTCOUNT(FactSales[StoreKey])
+		formatString: 0
+		lineageTag: 08f8efd5-3005-44e0-be20-4dba7b10b049
+
+	measure 'Cantidad Regiones' = COUNTA(DimStores[RegionCountryName])
+		formatString: 0
+		lineageTag: 9b730f55-4f75-4deb-9525-bd038dc7be0a
+
+	measure 'Cantidad Regiones en Blanco' = COUNTBLANK( DimStores[RegionCountryName] )
+		formatString: 0
+		lineageTag: e24e3632-7cb5-494e-a741-d8fca0655930
+
+	measure 'Cantidad Regiones Distintas' = DISTINCTCOUNT(DimStores[RegionCountryName])
+		formatString: 0
+		lineageTag: ef6d6c2b-c468-4ea2-b789-ef727ef3ff78
+
+	measure 'Total Ordenes' = COUNTROWS(FactSales)
+		formatString: #,0
+		lineageTag: 0fbe5f82-6163-4ade-9978-4702785d0b01
+
+	measure 'Total Ordenes Devueltas' =
+			CALCULATE(
+			    [Total Ordenes],
+			    FactSales[ReturnQuantity] > 0 //,
+			    //DimChannel[ChannelName] = "Store"
+			)
+		formatString: #,0
+		lineageTag: 20ced667-f555-4940-9fcc-61778e1d136a
+
+	measure 'ALL Total Ordenes' =
+			CALCULATE(
+			    [Total Ordenes],
+			    ALL(FactSales)
+			)
+		formatString: #,0
+		lineageTag: 7e303c61-f07e-49b9-930e-1c4651217867
+
+	measure '% ALL Ordenes' = DIVIDE ( [Total Ordenes], [ALL Total Ordenes], 0 )
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 416b731d-8b66-4f85-b349-d2eb63b31e4b
+
+	measure '% ALL Computers Category' =
+			DIVIDE(
+			    [Total Ordenes],
+			    CALCULATE(
+			        [Total Ordenes],
+			        FILTER(ALL(DimProduct), DimProduct[ProductCategory] = "Computers")
+			    ),
+			    0
+			)
+		formatString: 0\ %;-0\ %;0\ %
+		lineageTag: 4d143b14-a527-4488-981e-05043e9a353a
+
+	measure 'Total Ingresos' =
+			SUMX(FactSales,
+			    FactSales[SalesQuantity] *
+			    FactSales[Dcto Mayoreo] *
+			    RELATED(DimProduct[UnitPrice]) *
+			    ( 1 - RELATED(DimPromotion[DiscountPercent]) )
+			)
+		formatString: \$#,0;-\$#,0;\$#,0
+		lineageTag: 9f1e82aa-4900-4442-a3a4-5701329a1422
+
+	measure 'YTD Ingresos' =
+			//Year to date
+			CALCULATE(
+			    [Total Ingresos],
+			    DATESYTD(DimCalendar[DateKey])
+			)
+		formatString: #,0
+		lineageTag: d1a9c081-ce6d-4980-bc20-25f01302d103
+
+	measure 'YTD Ingresos 2' = TOTALYTD([Total Ingresos],DimCalendar[DateKey])
+		formatString: \$#,0;-\$#,0;\$#,0
+		lineageTag: e728d2a8-f3d4-405d-a0c8-5585fce02c8e
+
+	measure 'MTD Ingresos' =
+			//Month to date
+			TOTALMTD([Total Ingresos],DimCalendar[DateKey])
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: c031f954-e6f6-4b93-8133-fbf9c6d1b515
+
+	measure 'Total Ingresos LY' =
+			//Last Year
+			CALCULATE(
+			    [Total Ingresos],
+			    DATEADD(DimCalendar[DateKey], -1, YEAR)
+			)
+		formatString: \$#,0;-\$#,0;\$#,0
+		lineageTag: 6fc94a15-de4d-4f37-a12f-3a2b47d832aa
+
+	measure 'Total Ingresos Var LY' = [Total Ingresos] - [Total Ingresos LY]
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: 470e91ec-bf88-453e-bcb9-f66d8341e087
+
+	measure 'Total Ingresos LM' =
+			CALCULATE(
+			    [Total Ingresos],
+			    DATEADD(DimCalendar[DateKey], -1, MONTH)
+			)
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: fed9e042-6ca1-46d6-9cdc-15c2ab2552e7
+
+	measure 'Total Ingresos AD' =
+			//Antes de Descuento
+			SUMX(FactSales,
+			    FactSales[SalesQuantity] * RELATED(DimProduct[UnitPrice]))
+		formatString: \$#,0;-\$#,0;\$#,0
+		lineageTag: cd269968-538f-4e09-8cc7-9e497db9c497
+
+	measure 'Rank Ingresos Tiendas' = RANKX ( ALL(DimStores) , [Total Ingresos] )
+		formatString: 0
+		lineageTag: 5edd38f9-b0e2-44fa-b87d-acbdae5dff2c
+
+	measure 'Rank Ingresos Stores' = RANKX ( ALL(DimStores[Store]) , [Total Ingresos] )
+		formatString: 0
+		lineageTag: c8e1d8f5-5e25-4cd1-b24e-0c7604f21f1c
+
+	measure 'Rank Ingresos StoreName' = RANKX ( ALL(DimStores[StoreName]) , [Total Ingresos] )
+		formatString: 0
+		lineageTag: a7bf199f-4854-42e4-8eef-448c016a3e6b
+
+	measure 'Rank Ingresos Tiendas Cat' =
+			SWITCH(
+			    TRUE(),
+			    [Rank Ingresos Tiendas] <= 10 , "⭐⭐⭐⭐⭐",
+			    [Rank Ingresos Tiendas] <= 25 , "⭐⭐⭐⭐",
+			    [Rank Ingresos Tiendas] <= 50 , "⭐⭐⭐",
+			    [Rank Ingresos Tiendas] <= 100 , "⭐⭐",
+			    "⭐"
+			)
+		lineageTag: e4adf8d6-86ae-4eec-b105-06550c3656bb
+
+	measure 'Título Ingresos' = "Total Ingresos: " & FORMAT([Total Ingresos], "Currency")
+		lineageTag: 9587de45-20ee-4119-91b6-4e5cf69dcb6a
+
+	measure 'Título Devoluciones' =
+			VAR indicador = IF([Ratio Devoluciones]<=0.01, "✅", "❌")
+			RETURN
+			"% Devoluciones: " & FORMAT([Ratio Devoluciones], "0.00%" ) & indicador &
+			" | Cantidad: " & FORMAT([Total Ordenes Devueltas], "0,0" )
+		lineageTag: 0b0b2213-4609-4ca3-b5f4-bb745928ca1b
+
+	measure 'Título Filtros' =
+			var FiltroAnio = SELECTEDVALUE(DimCalendar[Año], "Multiple")
+			var FiltroProd = SELECTEDVALUE(DimProduct[ProductCategory], "Multiple")
+			var FiltroCont = SELECTEDVALUE(DimStores[ContinentName], "Multiple")
+			
+			RETURN
+			"Comparativa de Total Ingresos vs Año Anterior segmentado por:
+			- Año: " & FiltroAnio &
+			" - Categoría: " & FiltroProd &
+			" - Continente: " & FiltroCont
+		lineageTag: 4b777d12-05f8-40d7-b80f-7e6b0c98f9cf
+
+	measure 'Título Ingresos Var LY' =
+			VAR indicador = IF([Total Ingresos Var LY]<0, "❌", "✅" )
+			RETURN
+			"Total Ingresos: " & FORMAT([Total Ingresos], "$0,0" ) & indicador
+		lineageTag: 3678f212-8ded-4f44-993f-489e82784e07
+
+	partition 'Medidas DAX' = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Columnas quitadas" = Table.RemoveColumns(Origen,{"Columna1"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_ResultType = Table
+

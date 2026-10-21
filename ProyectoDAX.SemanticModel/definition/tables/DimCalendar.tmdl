@@ -1,0 +1,185 @@
+table DimCalendar
+	lineageTag: 8db2c99a-6e5c-43ec-9c80-e502fb553829
+	dataCategory: Time
+
+	column DateKey
+		dataType: dateTime
+		isKey
+		formatString: Long Date
+		lineageTag: 0e3579bd-3ffb-4345-aa25-1740a54b46bc
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column CalendarYear
+		dataType: int64
+		formatString: 0
+		lineageTag: bdb41f47-5bbb-4d43-81ea-89833b5eae78
+		summarizeBy: sum
+		sourceColumn: CalendarYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarHalfYearLabel
+		dataType: string
+		lineageTag: 73a933cd-6a13-4e64-a2c1-89939305bb41
+		summarizeBy: none
+		sourceColumn: CalendarHalfYearLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarQuarterLabel
+		dataType: string
+		lineageTag: 4549e079-0066-4423-a8d4-c4e013e8b7fe
+		summarizeBy: none
+		sourceColumn: CalendarQuarterLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarMonth
+		dataType: int64
+		formatString: 0
+		lineageTag: c244e913-859b-4aaf-98ba-e0ca85b9363c
+		summarizeBy: sum
+		sourceColumn: CalendarMonth
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarMonthLabel
+		dataType: string
+		lineageTag: 4f3760fb-cbef-4c22-bea3-5167a5e41cd2
+		summarizeBy: none
+		sourceColumn: CalendarMonthLabel
+		sortByColumn: Mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarWeekLabel
+		dataType: string
+		lineageTag: b8b0b620-f2c8-4b1e-b637-9b025f64ab5a
+		summarizeBy: none
+		sourceColumn: CalendarWeekLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarDayOfWeekLabel
+		dataType: string
+		lineageTag: b1cd4b9a-adeb-4eb3-945b-80310267880c
+		summarizeBy: none
+		sourceColumn: CalendarDayOfWeekLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsWorkDay
+		dataType: string
+		lineageTag: 8e7148bf-b6a8-438e-bdbf-fdacfc62dbe3
+		summarizeBy: none
+		sourceColumn: IsWorkDay
+
+		annotation SummarizationSetBy = Automatic
+
+	column Año = YEAR(DimCalendar[DateKey])
+		dataType: int64
+		formatString: 0
+		lineageTag: 655c302d-fc39-4b8f-b908-57a52ac48a8e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trimestre = "Trimestre " & QUARTER(DimCalendar[DateKey])
+		dataType: string
+		lineageTag: a0185e02-85bc-4a3c-bba5-98c26d2cf36e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes = MONTH(DimCalendar[DateKey])
+		dataType: int64
+		formatString: 0
+		lineageTag: faf353cc-4371-4ae8-912a-f04f92730bcd
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dia = DAY(DimCalendar[DateKey])
+		dataType: int64
+		formatString: 0
+		lineageTag: 6185b172-ed23-41a2-9e39-039336abd62d
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column SemanaAño = WEEKNUM ( DimCalendar[DateKey] )
+		dataType: int64
+		formatString: 0
+		lineageTag: f8623893-fe8f-46e0-aada-c0ac6443386e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column DiaSemana = WEEKDAY(DimCalendar[DateKey], 2)
+		dataType: int64
+		formatString: 0
+		lineageTag: 98ec878b-1990-4c01-8430-eec5b744f39b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column FinSemana =
+			IF( NOT DimCalendar[DiaSemana] in {1,2,3,4,5} ,
+			    "Fin Semana",
+			    "Día Laboral"
+			)
+		dataType: string
+		lineageTag: 11e74ca2-cb6c-4e84-ae35-011db2204453
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mes corto' = LEFT(DimCalendar[CalendarMonthLabel], 3)
+		dataType: string
+		lineageTag: 3511f0a1-2edb-4b31-97ea-02ef1fd097b3
+		summarizeBy: none
+		sortByColumn: Mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre Mes' = FORMAT(DimCalendar[DateKey], "MMMM")
+		dataType: string
+		lineageTag: 74f1f2dc-c7ea-480d-9600-0dc0329d7b6f
+		summarizeBy: none
+		sortByColumn: Mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre Día' = FORMAT(DimCalendar[DateKey], "DDDD")
+		dataType: string
+		lineageTag: 0d36eaf9-18cc-4a1a-8d9f-0ce927142190
+		summarizeBy: none
+		sortByColumn: DiaSemana
+
+		annotation SummarizationSetBy = Automatic
+
+	column Formato = LOWER(DimCalendar[FinSemana])
+		dataType: string
+		lineageTag: 537c795c-0945-446f-a366-5161b7ace16e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimCalendar = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents(Text.TrimEnd(RutaDatos, "\") & "\DimCalendar.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),
+				    #"Vacíos a null" = Table.ReplaceValue(#"Encabezados promovidos", "", null, Replacer.ReplaceValue, Table.ColumnNames(#"Encabezados promovidos")),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Vacíos a null", {{"DateKey", type date}, {"CalendarYear", Int64.Type}, {"CalendarHalfYearLabel", type text}, {"CalendarQuarterLabel", type text}, {"CalendarMonth", Int64.Type}, {"CalendarMonthLabel", type text}, {"CalendarWeekLabel", type text}, {"CalendarDayOfWeekLabel", type text}, {"IsWorkDay", type text}}, "en-US")
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+

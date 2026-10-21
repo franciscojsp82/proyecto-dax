@@ -1,0 +1,6 @@
+/// Carpeta donde están los archivos de datos (CSV/Parquet) del repositorio. Puede terminar o no en \
+expression RutaDatos = "C:\Users\Francisco Segura\OneDrive\Escritorio\ProyectoDAX\data\" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 978f0e62-6731-477f-9731-5036bca7a18e
+
+	annotation PBI_ResultType = Text
+

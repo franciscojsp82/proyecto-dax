@@ -1,0 +1,62 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "2d1bd70fd9d612a81456",
+  "position": {
+    "x": 498.23655913978496,
+    "y": 500.98924731182797,
+    "z": 4000,
+    "height": 145.89247311827958,
+    "width": 747.81362007168457
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas DAX"
+                    }
+                  },
+                  "Property": "Cantidad Regiones"
+                }
+              },
+              "queryRef": "Medidas DAX.Cantidad Regiones"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas DAX"
+                    }
+                  },
+                  "Property": "Cantidad Regiones en Blanco"
+                }
+              },
+              "queryRef": "Medidas DAX.Cantidad Regiones en Blanco"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas DAX"
+                    }
+                  },
+                  "Property": "Cantidad Regiones Distintas"
+                }
+              },
+              "queryRef": "Medidas DAX.Cantidad Regiones Distintas"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

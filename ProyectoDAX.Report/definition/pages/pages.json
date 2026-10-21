@@ -1,0 +1,20 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/pagesMetadata/1.1.0/schema.json",
+  "pageOrder": [
+    "ResumenGeneral9866acf164b0",
+    "ReportSection",
+    "ReportSectionff68c805b58d0541360a",
+    "ReportSectionb775a8715a342dec23a5",
+    "ReportSectionf0a5c2f6fe356b2d87a8",
+    "ReportSection71dd39ffdc12de45bd61",
+    "ReportSection885d40fa704da91bb898",
+    "ReportSectionf7cc35f35bde507bcb6d",
+    "ReportSectiondb59285b4b5c5e504656",
+    "ReportSection661012e50153466cb03e",
+    "ReportSection977f48b0414b0310206b",
+    "ReportSection4b459f4871bc24509930",
+    "ReportSection98f0623300b17bcd6490",
+    "ReportSection0f98f2e185930c15ec96"
+  ],
+  "activePageName": "ResumenGeneral9866acf164b0"
+}

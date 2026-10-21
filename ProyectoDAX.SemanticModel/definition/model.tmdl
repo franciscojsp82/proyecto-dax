@@ -1,0 +1,24 @@
+model Model
+	culture: es-MX
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-MX
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["RutaDatos", "DimCalendar", "DimChannel", "DimProduct", "DimPromotion", "DimStores", "FactSales", "Medidas DAX"]
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table DimCalendar
+ref table DimChannel
+ref table DimProduct
+ref table DimPromotion
+ref table DimStores
+ref table FactSales
+ref table 'Medidas DAX'
+
+ref cultureInfo es-MX
+

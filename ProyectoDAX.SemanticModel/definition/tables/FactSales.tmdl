@@ -1,0 +1,134 @@
+table FactSales
+	lineageTag: f89997c2-af8e-40bf-977a-2296ea8ad0be
+
+	column OrderID
+		dataType: int64
+		formatString: 0
+		lineageTag: 416143b5-654b-47f4-8f3e-ee3b87805251
+		summarizeBy: count
+		sourceColumn: OrderID
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateKey
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: caa25888-139c-4138-8f86-7a7857b7f587
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column channelKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 19872f0a-756d-4d4a-adb9-64fce416b5d1
+		summarizeBy: none
+		sourceColumn: channelKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column StoreKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: b1cea4ca-9907-46e8-a492-6a8f53cd8859
+		summarizeBy: none
+		sourceColumn: StoreKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 9ee71cab-4b3e-4db2-ad1e-2eae45e5b4a4
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column PromotionKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: ce8bb12f-49ac-49a4-a968-94fc789a4195
+		summarizeBy: none
+		sourceColumn: PromotionKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesQuantity
+		dataType: int64
+		formatString: 0
+		lineageTag: fe32dbd1-6ade-48e7-9529-b677520c7230
+		summarizeBy: sum
+		sourceColumn: SalesQuantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReturnQuantity
+		dataType: int64
+		formatString: 0
+		lineageTag: c2374ff5-e70c-4bee-ad7b-bb86e9d48009
+		summarizeBy: sum
+		sourceColumn: ReturnQuantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column Devolucion = IF( NOT FactSales[ReturnQuantity]=0, "Si", "No")
+		dataType: string
+		lineageTag: e80d4843-8c32-49b4-a5e3-92b9c94d0b39
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipo Venta' = IF(FactSales[SalesQuantity]>10, "Mayoreo", "Menudeo")
+		dataType: string
+		lineageTag: 75accd98-5bf8-443e-a2f1-c8db3e21b808
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipo Devolucion' =
+			IF(FactSales[ReturnQuantity] = 0,
+			BLANK(),
+			    IF(FactSales[ReturnQuantity] = 1,
+			    "Unica",
+			    "Multiple"
+			    )
+			)
+		dataType: string
+		lineageTag: d9cd2add-94de-4e72-8813-d486b7314950
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dcto Mayoreo' =
+			1 - (IF( FactSales[Tipo Venta] = "Mayoreo" && FactSales[channelKey] = 1 && FactSales[PromotionKey] = 1,
+			    0.05,
+			    0
+			    )
+			)
+		dataType: double
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: ebe5e3c7-ca4b-4da1-935d-3a6c97286d11
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactSales = m
+		mode: import
+		source =
+				let
+				    Origen = Parquet.Document(File.Contents(Text.TrimEnd(RutaDatos, "\") & "\FactSales.parquet")),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen, {{"OrderID", Int64.Type}, {"DateKey", type date}, {"channelKey", Int64.Type}, {"StoreKey", Int64.Type}, {"ProductKey", Int64.Type}, {"PromotionKey", Int64.Type}, {"SalesQuantity", Int64.Type}, {"ReturnQuantity", Int64.Type}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+

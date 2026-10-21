@@ -1,0 +1,83 @@
+table DimPromotion
+	lineageTag: 8a22dc33-c3dd-4500-8589-79a2874a9ee3
+
+	column PromotionKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 861d59c3-c6f3-44bb-ad54-edd223351fbd
+		summarizeBy: none
+		sourceColumn: PromotionKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column PromotionLabel
+		dataType: string
+		lineageTag: e803f3a3-e533-42cf-a918-bbdff2ed1f9f
+		summarizeBy: none
+		sourceColumn: PromotionLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column PromotionName
+		dataType: string
+		lineageTag: 5c206f38-57c9-42ec-b23e-6588d2185924
+		summarizeBy: none
+		sourceColumn: PromotionName
+
+		annotation SummarizationSetBy = Automatic
+
+	column DiscountPercent
+		dataType: double
+		lineageTag: 5458edbb-9dc9-423c-8fe6-c0a2752175f2
+		summarizeBy: sum
+		sourceColumn: DiscountPercent
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column StartDate
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: e50c6257-bd32-4ca8-96ff-a89503cd3260
+		summarizeBy: none
+		sourceColumn: StartDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column EndDate
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 5dcfa263-3550-4e84-b51c-d0efbc62aa88
+		summarizeBy: none
+		sourceColumn: EndDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DiferenciaDias = DATEDIFF(DimPromotion[StartDate], DimPromotion[EndDate],DAY)
+		dataType: int64
+		formatString: 0
+		lineageTag: a0df3351-9386-4787-b1c2-fafd32ff12d6
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimPromotion = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents(Text.TrimEnd(RutaDatos, "\") & "\DimPromotion.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),
+				    #"Vacíos a null" = Table.ReplaceValue(#"Encabezados promovidos", "", null, Replacer.ReplaceValue, Table.ColumnNames(#"Encabezados promovidos")),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Vacíos a null", {{"PromotionKey", Int64.Type}, {"PromotionLabel", type text}, {"PromotionName", type text}, {"DiscountPercent", type number}, {"StartDate", type date}, {"EndDate", type date}}, "en-US")
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "9b6f0dc8ed6ae2d08e78",
+  "position": {
+    "x": 498.23655913978496,
+    "y": 324.81720430107526,
+    "z": 3000,
+    "height": 145.89247311827958,
+    "width": 747.81362007168457
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas DAX"
+                    }
+                  },
+                  "Property": "Cantidad Tiendas"
+                }
+              },
+              "queryRef": "Medidas DAX.Cantidad Tiendas"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas DAX"
+                    }
+                  },
+                  "Property": "Cantidad Tiendas con Ventas"
+                }
+              },
+              "queryRef": "Medidas DAX.Cantidad Tiendas con Ventas"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
